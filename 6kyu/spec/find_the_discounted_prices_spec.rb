@@ -12,4 +12,8 @@ describe 'find_discounted' do
   it 'returns multiple discounted prices' do
     expect(find_discounted('15 20 60 80')).to eq '15 60'
   end
+
+  it 'returns multiple discounted prices and ignores incorrect prices' do
+    expect(find_discounted('15 20 60 80 90 100')).to eq '15 60'
+  end
 end
