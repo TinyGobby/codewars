@@ -25,4 +25,8 @@ describe 'find_discounted' do
   it 'returns correctly with multiple pairs sorted from smaller to bigger' do
     expect(find_discounted('15 20 60 75 80 100')).to eq '15 60 75'
   end
+
+  it 'returns correctly with duplicate numbers in multiple pairs' do
+    expect(find_discounted('9 9 12 12 12 15 16 20')).to eq '9 9 12 15'
+  end
 end
