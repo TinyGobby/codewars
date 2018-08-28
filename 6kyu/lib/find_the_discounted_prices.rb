@@ -2,15 +2,21 @@ def find_discounted(prices)
   # https://www.codewars.com/kata/find-the-discounted-prices/train/ruby
   price_arr = prices.split(' ')
   discounted = []
-  (price_arr.length/2).times do
-    currently_verifying = price_arr.shift(2)
-    if verify_discounted(currently_verifying[0], currently_verifying[1])
-      discounted.push(currently_verifying[0])
+
+  while price_arr.length > 0 do
+
+    currently_verifying = price_arr.shift.to_i
+    if verify_discounted(currently_verifying, price_arr)
+      discounted.push(currently_verifying)
     end
   end
+
   discounted.join(' ')
 end
 
-def verify_discounted(price_1, price_2)
-  price_1.to_i / 0.75 == price_2.to_i
+def verify_discounted(currently_verifying, price_arr)
+  currently_verifying /= 0.75
+  price_arr.index(currently_verifying.to_i.to_s)
 end
+
+find_discounted('15 20 60 75 80 100')
