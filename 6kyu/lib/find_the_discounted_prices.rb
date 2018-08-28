@@ -3,8 +3,7 @@ def find_discounted(prices)
   price_arr = prices.split(' ')
   discounted = []
 
-  while price_arr.length > 0 do
-
+  until price_arr.empty?
     currently_verifying = price_arr.shift.to_i
     if verify_discounted(currently_verifying, price_arr)
       price_arr.delete_at(verify_discounted(currently_verifying, price_arr))

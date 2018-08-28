@@ -7,7 +7,7 @@ describe 'find_discounted' do
   end
 
   it 'ignores incorrect single discounted price' do
-    expect(find_discounted('80 100')).to eq ""
+    expect(find_discounted('80 100')).to eq ''
   end
 
   it 'returns multiple discounted prices when provided in pairs' do
